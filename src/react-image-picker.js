@@ -58,7 +58,7 @@ class ImagePicker extends Component {
     return (
       <Image
         src={image.src}
-        isSelected={this.state.picked.has(image.value) || (image.selected)}
+        isSelected={this.state.picked.has(image.value)}
         onImageClick={() => this.handleImageClick(image)}
         width={image.width}
         height={image.height}
