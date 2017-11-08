@@ -1,6 +1,6 @@
 {
   "name": "react-image-picker",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Picks images from gallery",
   "main": "dist/index.js",
   "scripts": {
@@ -11,6 +11,12 @@
     "test:watch": "npm run test --watch"
   },
   "author": "In Sin <insin_lie93@yahoo.com>",
+  "contributors": [
+    { "name" : "Yilmaz Guleryuz",
+      "email" : "yilmaz@guleryuz.net",
+      "url" : "https://github.com/zeusbaba"
+    }
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "^15.6.1",
