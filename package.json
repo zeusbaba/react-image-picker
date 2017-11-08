@@ -12,9 +12,10 @@
   },
   "author": "In Sin <insin_lie93@yahoo.com>",
   "contributors": [
-    { "name" : "Yilmaz Guleryuz",
-      "email" : "yilmaz@guleryuz.net",
-      "url" : "https://github.com/zeusbaba"
+    {
+      "name": "Yilmaz Guleryuz",
+      "email": "yilmaz@guleryuz.net",
+      "url": "https://github.com/zeusbaba"
     }
   ],
   "license": "MIT",

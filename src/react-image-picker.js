@@ -16,11 +16,25 @@ class ImagePicker extends Component {
   }
 
   componentWillMount() {
-    const { images } = this.props
+    const { images, width, height } = this.props;
     images.map(image => {
-      if (image.selected) { // image is preselected while loading this component
-        handleImageClick(image);
+      if (image.selected) {
+        // image is preselected while loading this component
+        this.handleImageClick(image);
       }
+
+      if (width && height) {
+        image.width = width;
+        image.height = height;
+      } else {
+        // default values
+        image.width = 150;
+        image.height = 150;
+      }
+      Object.assign(
+        images,
+        images.map(el => (el.value === image.value ? image : el)),
+      );
     });
   }
 
@@ -44,8 +58,10 @@ class ImagePicker extends Component {
     return (
       <Image
         src={image.src}
-        isSelected={this.state.picked.has(image.value)}
+        isSelected={this.state.picked.has(image.value) || (image.selected)}
         onImageClick={() => this.handleImageClick(image)}
+        width={image.width}
+        height={image.height}
         key={i}
       />
     )
