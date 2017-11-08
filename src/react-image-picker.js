@@ -15,6 +15,15 @@ class ImagePicker extends Component {
     this.renderImage = this.renderImage.bind(this)
   }
 
+  componentWillMount() {
+    const { images } = this.props
+    images.map(image => {
+      if (image.selected) { // image is preselected while loading this component
+        handleImageClick(image);
+      }
+    });
+  }
+
   handleImageClick(image) {
     const { multiple, onPick } = this.props
     const pickedImage = multiple ? this.state.picked : Map()
@@ -35,8 +44,8 @@ class ImagePicker extends Component {
     return (
       <Image
         src={image.src}
-        isSelected={this.state.picked.has(image.value) || image.selected}
-        onImageClick={() => this.handleImageClick(image)} 
+        isSelected={this.state.picked.has(image.value)}
+        onImageClick={() => this.handleImageClick(image)}
         key={i}
       />
     )
